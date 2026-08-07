@@ -1,0 +1,187 @@
+:root{
+  --wood-dark:#2C1E14;
+  --wood-mid:#43301F;
+  --wood-panel:#4E3925;
+  --wood-grain:#5C4530;
+  --paper:#EFE1C4;
+  --paper-dim:#C9B78F;
+  --muted:#9C8564;
+  --brass:#C79A56;
+  --brass-dim:#7A5F3C;
+  --hairline:#5C4530;
+
+  --w-build:#D98B3D;
+  --w-curiosity:#3FA79A;
+  --w-imagineering:#C1495B;
+  --w-film:#8C77B0;
+  --w-experience:#4C7FA0;
+  --w-evergreen:#6E8F4E;
+
+  --display:'Rye', serif;
+  --mono:'Courier Prime', monospace;
+  --voice:'Caveat', cursive;
+}
+
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{
+  background:
+    repeating-linear-gradient(100deg,
+      rgba(0,0,0,0.06) 0px, rgba(0,0,0,0.06) 2px,
+      transparent 2px, transparent 5px),
+    radial-gradient(ellipse at 50% -20%, rgba(199,154,86,0.10), transparent 45%),
+    linear-gradient(180deg, var(--wood-dark), #241811 70%);
+  color:var(--paper);
+  font-family:var(--mono);
+  -webkit-font-smoothing:antialiased;
+}
+
+.wrap{max-width:1040px;margin:0 auto;padding:0 28px;}
+
+/* wood-grain panel texture, reused across header/cards/controls/ticker */
+.grain{
+  background-image:
+    repeating-linear-gradient(90deg, rgba(0,0,0,0.10) 0px, transparent 2px, transparent 40px, rgba(0,0,0,0.06) 42px),
+    linear-gradient(180deg, var(--wood-panel), var(--wood-mid));
+}
+
+/* ---------- signal header : carved sign ---------- */
+.signal-header{
+  border-bottom:3px solid var(--brass-dim);
+  padding:20px 0;
+  box-shadow: 0 6px 14px -8px rgba(0,0,0,0.6);
+}
+.signal-header .wrap{display:flex;align-items:center;justify-content:space-between;}
+.callsign{
+  font-family:var(--display);
+  font-size:26px;
+  letter-spacing:0.03em;
+  color:var(--paper);
+  text-shadow:0 2px 0 rgba(0,0,0,0.4);
+}
+.callsign span{color:var(--brass);}
+.signal-status{
+  font-size:11px;letter-spacing:0.1em;color:var(--muted);
+  display:flex;align-items:center;gap:8px;text-transform:uppercase;
+}
+.dot{
+  width:7px;height:7px;border-radius:50%;
+  background:var(--w-curiosity);
+  box-shadow:0 0 6px var(--w-curiosity);
+  animation:pulse 2.4s ease-in-out infinite;
+}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.3;}}
+
+/* ---------- hero ---------- */
+.hero{padding:50px 0 18px;}
+.eyebrow{
+  font-family:var(--display);
+  font-size:15px;letter-spacing:0.06em;color:var(--brass);
+  margin-bottom:16px;
+}
+.transmissions{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.tx-card{
+  position:relative;
+  padding:20px 20px 18px;
+  border:1px solid var(--hairline);
+  border-left:5px solid var(--accent);
+  box-shadow:inset 0 0 30px rgba(0,0,0,0.25), 0 3px 8px rgba(0,0,0,0.35);
+}
+.tx-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;}
+.case-no{font-size:11px;color:var(--muted);letter-spacing:0.06em;}
+.tx-status{
+  font-size:10px;letter-spacing:0.08em;text-transform:uppercase;
+  color:var(--accent);display:flex;align-items:center;gap:6px;
+}
+.tx-status .dot{background:var(--accent);box-shadow:0 0 6px var(--accent);width:6px;height:6px;}
+.tx-question{
+  font-family:var(--voice);
+  font-size:26px;
+  line-height:1.25;
+  color:var(--paper);
+  margin:0 0 10px;
+}
+.tx-wing{font-size:11px;color:var(--muted);letter-spacing:0.04em;text-transform:uppercase;}
+.tx-wing b{color:var(--accent);font-weight:700;}
+
+/* ---------- the question line : pinned note ---------- */
+.site-question{padding:36px 0 44px;border-bottom:3px solid var(--brass-dim);}
+.site-question p{
+  font-family:var(--voice);
+  font-size:34px;
+  line-height:1.35;
+  max-width:640px;
+  color:var(--paper);
+  margin:0;
+  transform:rotate(-0.4deg);
+}
+.site-question .who{
+  display:block;margin-top:16px;font-family:var(--mono);
+  font-size:11px;color:var(--muted);letter-spacing:0.06em;text-transform:uppercase;
+}
+
+/* ---------- station controls : carved oak dial panel ---------- */
+.controls{padding:46px 0;border-bottom:1px solid var(--hairline);}
+.controls .eyebrow{margin-bottom:24px;}
+.dial-row{display:flex;flex-wrap:wrap;gap:30px;align-items:flex-end;}
+.dial-unit{display:flex;flex-direction:column;align-items:center;gap:10px;cursor:pointer;user-select:none;}
+.dial{
+  width:66px;height:66px;border-radius:50%;
+  background:
+    radial-gradient(circle at 32% 28%, #6b4c30, #2c1e14 72%);
+  border:3px solid var(--brass-dim);
+  box-shadow:inset 0 2px 4px rgba(0,0,0,0.5), 0 2px 3px rgba(0,0,0,0.4);
+  position:relative;
+  transition:border-color .25s, box-shadow .25s;
+}
+.dial::before{
+  content:"";
+  position:absolute;top:9px;left:50%;
+  width:3px;height:17px;
+  background:var(--brass-dim);
+  border-radius:2px;
+  transform-origin:bottom center;
+  transform:translateX(-50%) rotate(0deg);
+  transition:transform .3s ease, background .25s;
+}
+.dial-unit.active .dial{border-color:var(--wcolor);box-shadow:inset 0 2px 4px rgba(0,0,0,0.5), 0 0 14px -2px var(--wcolor);}
+.dial-unit.active .dial::before{background:var(--wcolor);transform:translateX(-50%) rotate(35deg);}
+.dial-label{font-family:var(--mono);font-size:10px;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted);text-align:center;}
+.dial-unit.active .dial-label{color:var(--wcolor);}
+
+.master-switch{
+  display:flex;align-items:center;gap:10px;margin-left:auto;
+  padding:11px 18px;border:1px solid var(--brass-dim);
+  font-size:11px;letter-spacing:0.06em;text-transform:uppercase;
+  color:var(--muted);cursor:pointer;
+}
+.master-switch:hover{border-color:var(--brass);color:var(--paper);}
+
+.tuned-readout{margin-top:24px;font-size:11px;color:var(--muted);letter-spacing:0.04em;text-transform:uppercase;}
+.tuned-readout b{color:var(--paper);}
+
+/* ---------- ticker : carved wooden strip ---------- */
+.ticker-wrap{border-bottom:1px solid var(--hairline);padding:16px 0;overflow:hidden;white-space:nowrap;}
+.ticker-label{display:inline-block;font-family:var(--display);font-size:13px;color:var(--brass);letter-spacing:0.04em;margin-right:24px;vertical-align:middle;}
+.ticker-track{display:inline-block;animation:scroll 24s linear infinite;vertical-align:middle;}
+.ticker-track span{margin-right:38px;font-size:12px;color:var(--muted);}
+.ticker-track span b{color:var(--paper);font-weight:700;}
+@keyframes scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+/* ---------- about : handwritten log page ---------- */
+.about{padding:46px 0;border-bottom:1px solid var(--hairline);max-width:600px;}
+.about p{font-family:var(--voice);font-size:24px;line-height:1.5;color:var(--paper);margin:0;}
+.about .sig{display:block;margin-top:16px;font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:0.04em;}
+
+/* ---------- footer : signage plate ---------- */
+footer{padding:28px 0 44px;}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+.freq{font-size:11px;color:var(--muted);letter-spacing:0.04em;}
+.freq a{color:var(--paper);text-decoration:none;border-bottom:1px solid var(--hairline);}
+.freq a:hover{border-color:var(--brass);}
+
+@media (max-width:640px){
+  .transmissions{grid-template-columns:1fr;}
+  .site-question p{font-size:26px;}
+  .master-switch{margin-left:0;}
+}
