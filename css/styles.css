@@ -17,9 +17,9 @@
   --w-experience:#4C7FA0;
   --w-evergreen:#6E8F4E;
 
-  --display:'Rye', serif;
+  --display:'Old Standard TT', serif;
   --mono:'Courier Prime', monospace;
-  --voice:'Caveat', cursive;
+  --voice:'Special Elite', monospace;
 }
 
 *{box-sizing:border-box;}
