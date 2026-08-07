@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Homepage </title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <header class="signal-header grain">
+    <div class="wrap">
+      <div class="callsign"><span>OV</span> · FIELD STATION</div>
+      <div class="signal-status"><span class="dot"></span> Signal Active</div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap">
+      <div class="eyebrow">Currently Transmitting</div>
+      <div class="transmissions">
+        <div class="tx-card grain" style="--accent:var(--w-build);">
+          <div class="tx-top">
+            <span class="case-no">EG-014</span>
+            <span class="tx-status"><span class="dot"></span>In the Field</span>
+          </div>
+          <p class="tx-question">Can a game teach CSS the way a museum teaches physics?</p>
+          <div class="tx-wing">Wing — <b>Build Lab</b></div>
+        </div>
+        <div class="tx-card grain" style="--accent:var(--w-imagineering);">
+          <div class="tx-top">
+            <span class="case-no">EG-021</span>
+            <span class="tx-status"><span class="dot"></span>In the Field</span>
+          </div>
+          <p class="tx-question">What makes a Disney queue feel like part of the story?</p>
+          <div class="tx-wing">Wing — <b>Imagineering Challenge</b></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="site-question">
+    <div class="wrap">
+      <p>What if learning didn't need to be rescued from being boring?</p>
+      <span class="who">— transmitted from the Evergreen outpost</span>
+    </div>
+  </section>
+
+  <section class="controls grain">
+    <div class="wrap">
+      <div class="eyebrow">Station Controls</div>
+      <div class="dial-row" id="dialRow">
+        <div class="dial-unit active" data-wing="Build Lab" style="--wcolor:var(--w-build);">
+          <div class="dial"></div><div class="dial-label">Build Lab</div>
+        </div>
+        <div class="dial-unit" data-wing="Curiosity Lab" style="--wcolor:var(--w-curiosity);">
+          <div class="dial"></div><div class="dial-label">Curiosity Lab</div>
+        </div>
+        <div class="dial-unit" data-wing="Imagineering Challenge" style="--wcolor:var(--w-imagineering);">
+          <div class="dial"></div><div class="dial-label">Imagineering</div>
+        </div>
+        <div class="dial-unit" data-wing="Film Lab" style="--wcolor:var(--w-film);">
+          <div class="dial"></div><div class="dial-label">Film Lab</div>
+        </div>
+        <div class="dial-unit" data-wing="Experience Lab" style="--wcolor:var(--w-experience);">
+          <div class="dial"></div><div class="dial-label">Experience Lab</div>
+        </div>
+        <div class="dial-unit" data-wing="Project Evergreen" style="--wcolor:var(--w-evergreen);">
+          <div class="dial"></div><div class="dial-label">Evergreen</div>
+        </div>
+        <div class="master-switch" id="masterSwitch">⎋ Full Archive</div>
+      </div>
+      <div class="tuned-readout">Tuned to — <b id="tunedLabel">Build Lab</b></div>
+    </div>
+  </section>
+
+  <div class="ticker-wrap grain">
+    <div class="wrap">
+      <span class="ticker-label">Recent Activity</span>
+      <span class="ticker-track" id="tickerTrack"></span>
+    </div>
+  </div>
+
+  <section class="about">
+    <div class="wrap">
+      <p>This is a live outpost, not a finished exhibit. Some of what's catalogued here works. Some of it doesn't — yet. I'm logging both, because that's closer to the truth of how anything gets built.</p>
+      <span class="sig">— station operator, Project Evergreen</span>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div class="freq">106.4 FM — <a href="#">Livascope</a></div>
+      <div class="freq"><a href="#">Full Archive</a> · <a href="#">Transmission Log</a> · <a href="#">Contact</a></div>
+    </div>
+  </footer>
+
+<script src="js/buttons.js">
+</script>
+
+</body>
+</html>
