@@ -10,6 +10,13 @@
   --brass-dim:#7A5F3C;
   --hairline:#5C4530;
 
+  --steel-dark:#2B2F31;
+  --steel-mid:#3E4346;
+  --steel-panel:#484F52;
+  --steel-highlight:#7A8286;
+  --steel-hairline:#5B6265;
+  --rivet:#8A8580;
+
   --w-build:#D98B3D;
   --w-curiosity:#3FA79A;
   --w-imagineering:#C1495B;
@@ -29,8 +36,8 @@ body{
     repeating-linear-gradient(100deg,
       rgba(0,0,0,0.06) 0px, rgba(0,0,0,0.06) 2px,
       transparent 2px, transparent 5px),
-    radial-gradient(ellipse at 50% -20%, rgba(199,154,86,0.10), transparent 45%),
-    linear-gradient(180deg, var(--wood-dark), #241811 70%);
+    radial-gradient(ellipse at 50% -20%, rgba(122,130,134,0.10), transparent 45%),
+    linear-gradient(180deg, var(--steel-dark), #202426 70%);
   color:var(--paper);
   font-family:var(--mono);
   -webkit-font-smoothing:antialiased;
@@ -43,6 +50,13 @@ body{
   background-image:
     repeating-linear-gradient(90deg, rgba(0,0,0,0.10) 0px, transparent 2px, transparent 40px, rgba(0,0,0,0.06) 42px),
     linear-gradient(180deg, var(--wood-panel), var(--wood-mid));
+}
+
+.steel{
+  background-image:
+    repeating-linear-gradient(115deg, rgba(255,255,255,0.03) 0px, transparent 1px, transparent 3px),
+    repeating-linear-gradient(25deg, rgba(0,0,0,0.08) 0px, transparent 1px, transparent 6px),
+    linear-gradient(180deg, var(--steel-panel), var(--steel-mid));
 }
 
 /* ---------- signal header : carved sign ---------- */
